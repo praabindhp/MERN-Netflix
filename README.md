@@ -1,2 +1,2 @@
 # Netflix-Clone
-Netflix Clone Using React JavaScript, Node JavaScript, MongoDB, JWT And Many More
+Netflix Clone - MERN Application Using React JavaScript, Node JavaScript, MongoDB, JWT And Many More
