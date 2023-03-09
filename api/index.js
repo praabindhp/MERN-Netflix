@@ -14,6 +14,7 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
+    useFindAndModify: false,
   })
   .then(() => console.log("DB Connection Successfull"))
   .catch((err) => {
@@ -28,5 +29,5 @@ app.use("/api/movies", movieRoute);
 app.use("/api/lists", listRoute);
 
 app.listen(8800, () => {
-  console.log("Backend server is running!");
+  console.log("Backend Server Is Running!");
 });

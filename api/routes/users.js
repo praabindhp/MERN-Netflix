@@ -2,7 +2,7 @@ const router = require("express").Router();
 const User = require("../models/User");
 const CryptoJS = require("crypto-js");
 const verify = require("../verifyToken");
-//UPDATE
+// UPDATE
 
 router.put("/:id", verify, async (req, res) => {
   if (req.user.id === req.params.id || req.user.isAdmin) {
@@ -26,25 +26,25 @@ router.put("/:id", verify, async (req, res) => {
       res.status(500).json(err);
     }
   } else {
-    res.status(403).json("You can update only your account!");
+    res.status(403).json("You Can Update Only Your Account!");
   }
 });
 
-//DELETE
+// DELETE
 router.delete("/:id", verify, async (req, res) => {
   if (req.user.id === req.params.id || req.user.isAdmin) {
     try {
       await User.findByIdAndDelete(req.params.id);
-      res.status(200).json("User has been deleted...");
+      res.status(200).json("User Has Been Deleted...");
     } catch (err) {
       res.status(500).json(err);
     }
   } else {
-    res.status(403).json("You can delete only your account!");
+    res.status(403).json("You Can Delete Only Your Account!");
   }
 });
 
-//GET
+// GET
 
 router.get("/find/:id", async (req, res) => {
   try {
@@ -56,7 +56,7 @@ router.get("/find/:id", async (req, res) => {
   }
 });
 
-//GET ALL
+// GET ALL
 router.get("/", verify, async (req, res) => {
   const query = req.query.new;
   if (req.user.isAdmin) {
@@ -69,11 +69,11 @@ router.get("/", verify, async (req, res) => {
       res.status(500).json(err);
     }
   } else {
-    res.status(403).json("You are not allowed to see all users!");
+    res.status(403).json("You Are Not Allowed To See All Users!");
   }
 });
 
-//GET USER STATS
+// GET USER STATS
 router.get("/stats", async (req, res) => {
   const today = new Date();
   const latYear = today.setFullYear(today.setFullYear() - 1);

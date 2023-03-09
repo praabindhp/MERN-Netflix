@@ -1,0 +1,5 @@
+https://github.com/koolkishan/netflix-clone-react-node
+
+https://developers.themoviedb.org/3/getting-started/introduction
+
+https://firebase.google.com/
